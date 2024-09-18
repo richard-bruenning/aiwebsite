@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<script>
+    // Anfrage an das PHP-Skript senden, ohne den Prompt zu übermitteln
+    fetch('openai.php')
+        .then(response => response.text())
+        .then(data => {
+            // Den erhaltenen Inhalt in die Webseite einfügen
+            document.getElementById('content').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Fehler:', error);
+            document.getElementById('content').innerText = 'Es gab einen Fehler beim Laden des Inhalts..';
+        });
+</script>
+
+<html id="content"><h3>Es wird eine Website generiert mit folgendem Prompt: "Bitte erzeuge eine komplette Website zum Thema KI, stell positive Interaktionen und einen Fahrplan in die Zukunft vor. 
+    Wie kann die Menschheit und die KI zusammen großes erreichen? Suche auch nach aktuellen Themen. Versuche eigenständig die Website interessant zu machen. Gib nur den HTML Code aus."</h3></html>
+
